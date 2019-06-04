@@ -15,7 +15,6 @@ const routes: Routes = [
   { path: 'calendar', loadChildren: './pages/calendar/calendar.module#CalendarPageModule' },
   { path: 'documents', loadChildren: './pages/documents/documents.module#DocumentsPageModule' },
   { path: 'education', loadChildren: './pages/education/education.module#EducationPageModule' },
-  { path: 'logout', loadChildren: './pages/logout/logout.module#LogoutPageModule' },
   { path: 'signin', loadChildren: './pages/sign-in/sign-in.module#SignInPageModule' }
 ];
 

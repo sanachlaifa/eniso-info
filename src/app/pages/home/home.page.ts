@@ -26,7 +26,8 @@ export class HomePage {
 
     const msg = authService.sessionID;
     if ((!msg) || (msg === undefined)) {
-      router.navigateByUrl('/login');
+      router.navigateByUrl('/signin');
+      
     }
     this.data = homeService.gerArticles(authService.sessionID);
     this.data
