@@ -1,0 +1,19 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Home page</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content >
+    <ion-list>
+      <ion-card *ngFor="let item of items">
+            <h2 > {{item.article.subject}} </h2>
+            <div [innerHTML]="item.article.content"></div> 
+            <h3>écrit par: {{item.article.sender.fullTitle}}  </h3>  
+        
+      </ion-card>
+    
+    
+    </ion-list>
+    
+    </ion-content>
