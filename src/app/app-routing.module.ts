@@ -4,22 +4,19 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'signin',
     pathMatch: 'full'
   },
   {
     path: 'home',
     loadChildren: './pages/home/home.module#HomePageModule'
   },
-  {
-    path: 'list',
-    loadChildren: './pages/list/list.module#ListPageModule'
-  },
-  {
-    path: 'login',
-    loadChildren: './pages/login/login.module#LoginPageModule'
-  },
-  { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' }
+  { path: 'profil', loadChildren: './pages/profil/profil.module#ProfilPageModule' },
+  { path: 'calendar', loadChildren: './pages/calendar/calendar.module#CalendarPageModule' },
+  { path: 'documents', loadChildren: './pages/documents/documents.module#DocumentsPageModule' },
+  { path: 'education', loadChildren: './pages/education/education.module#EducationPageModule' },
+  { path: 'logout', loadChildren: './pages/logout/logout.module#LogoutPageModule' },
+  { path: 'signin', loadChildren: './pages/sign-in/sign-in.module#SignInPageModule' }
 ];
 
 @NgModule({

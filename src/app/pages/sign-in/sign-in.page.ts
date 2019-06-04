@@ -2,28 +2,25 @@ import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { AlertController } from '@ionic/angular';
-import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
+  selector: 'app-sign-in',
+  templateUrl: './sign-in.page.html',
+  styleUrls: ['./sign-in.page.scss'],
 })
-export class LoginPage implements OnInit {
+export class SignInPage implements OnInit {
 
   username: string;
   v: any;
   password: string;
   data: Observable<any>;
   constructor(public router: Router,
-    private menu: MenuController,
-    public alertCtrl: AlertController,
-    private http: HttpClient,
-    private authService: AuthService) {
+              private menu: MenuController,
+              public alertCtrl: AlertController,
+              private authService: AuthService) {
     this.menu.enable(false);
-
   }
 
 
@@ -32,21 +29,18 @@ export class LoginPage implements OnInit {
   }
 
   Show() {
-    console.log("username: " + this.username);
-    console.log("password: " + this.password);
+    console.log('username: ' + this.username);
+    console.log('password: ' + this.password);
   }
   connect() {
     this.Show();
-    const url = "http://eniso.info/ws/core/login/" + this.username + "?password="
-      + this.password;
-    this.data = this.http.get(url);
-
+    this.data = this.authService.getUser(this.username, this.password);
     this.data.subscribe(data => {
-      if (data['\$error'] === undefined) {
-        const extra = { msg: data['\$1'].sessionId };
+      if (data.$error === undefined) {
+        const extra = { msg: data.$1.sessionId };
 
         // Register the session id
-        this.authService.sessionID = data['\$1'].sessionId;
+        this.authService.sessionID = data.$1.sessionId;
 
         this.router.navigateByUrl('/home', { state: extra });
         setTimeout(() => {
