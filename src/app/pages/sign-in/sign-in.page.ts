@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { AlertController } from '@ionic/angular';
@@ -11,7 +11,7 @@ import { BaseService } from 'src/app/services/base.service';
   templateUrl: './sign-in.page.html',
   styleUrls: ['./sign-in.page.scss'],
 })
-export class SignInPage implements OnInit, AfterViewInit {
+export class SignInPage implements OnInit {
 
   username: string;
   v: any;
@@ -22,25 +22,12 @@ export class SignInPage implements OnInit, AfterViewInit {
     public alertCtrl: AlertController,
     private authService: AuthService,
     private base: BaseService) {
-    //this.menu.enable(false);
-    console.log('constructor');
 
 
   }
 
-  ngAfterViewInit() {
-    this.menu.enable(false);
-    console.log('ngAfterViewInit');
-
-  }
 
   ngOnInit() {
-    console.log('init');
-
-    /*  if (this.base.isEnabled) {
-       this.menu.enable(false);
-       this.base.isEnabled = false;
-     } */
   }
 
   Show() {
@@ -68,15 +55,6 @@ export class SignInPage implements OnInit, AfterViewInit {
       }
 
     });
-  }
-
-  ngDestroy() {
-    console.log('destroyed');
-
-    /*  if (this.base.isEnabled) {
-       this.menu.enable(false);
-       this.base.isEnabled = false;
-     } */
   }
 
   async presentAlert(title: string, msg: string) {

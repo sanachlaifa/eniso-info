@@ -9,33 +9,21 @@
       <ion-content>
         <ion-list>
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
-<<<<<<< HEAD
-            <ion-item *ngIf="p.title!=='Logout' ; else elseBlock" [routerDirection]="'root'" [routerLink]="[p.url]">
-=======
 
             <ion-item *ngIf="p.title!=='Logout'; else elseBlock" [routerDirection]="'root'" [routerLink]="[p.url]">
->>>>>>> master
               <ion-icon slot="start" [name]="p.icon"></ion-icon>
               <ion-label>
                 {{p.title}}
               </ion-label>
             </ion-item>
             <ng-template #elseBlock>
-<<<<<<< HEAD
-              <ion-item (click)="logout()" [routerDirection]="'root'" [routerLink]="">
-=======
               <ion-item [routerDirection]="'root'" [routerLink]="" (click)="logout()">
->>>>>>> master
                 <ion-icon slot="start" [name]="p.icon"></ion-icon>
                 <ion-label>
                   {{p.title}}
                 </ion-label>
               </ion-item>
             </ng-template>
-<<<<<<< HEAD
-
-=======
->>>>>>> master
           </ion-menu-toggle>
 
         </ion-list>
@@ -43,19 +31,4 @@
     </ion-menu>
     <ion-router-outlet main></ion-router-outlet>
   </ion-split-pane>
-<<<<<<< HEAD
 </ion-app>
-
-<!--
-   <ng-template #elseBlock>
-              <ion-item>
-                <ion-icon slot="start" name="logout"></ion-icon>
-                <ion-label>
-                  logout
-                </ion-label>
-              </ion-item>
-            </ng-template>
--->
-=======
-</ion-app>
->>>>>>> master

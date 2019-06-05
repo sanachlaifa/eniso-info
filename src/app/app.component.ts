@@ -1,11 +1,4 @@
 import { Component } from '@angular/core';
-<<<<<<< HEAD
-import { Platform, MenuController } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { AuthService } from 'src/app/services/auth.service';
-import { Router } from '@angular/router';
-=======
 
 import { Platform, MenuController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -13,7 +6,6 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AuthService } from './services/auth.service';
 import { Router } from '@angular/router';
 
->>>>>>> master
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html'
@@ -47,10 +39,7 @@ export class AppComponent {
     },
     {
       title: 'Logout',
-<<<<<<< HEAD
-=======
       url: '',
->>>>>>> master
       icon: 'log-out'
     }
   ];
@@ -59,18 +48,11 @@ export class AppComponent {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-<<<<<<< HEAD
-    private router: Router,
-    private authService: AuthService,
-    private menu: MenuController,
-=======
     private authService: AuthService,
     private router: Router,
     private menuCtr: MenuController
->>>>>>> master
   ) {
     this.initializeApp();
-    this.menu.enable(true);
   }
 
   initializeApp() {
@@ -80,22 +62,6 @@ export class AppComponent {
     });
   }
   logout() {
-<<<<<<< HEAD
-    console.log('logout!');
-    if (this.authService.sessionID) {
-      this.authService.logout().subscribe(data => {
-        try {
-          console.log(data['\$1']);
-          this.router.navigateByUrl('/signin');
-          this.menu.enable(false);
-        } catch (error) {
-          console.log(data['\error']);
-
-        }
-
-      });
-    }
-=======
     this.authService.logout().subscribe(msg => {
       try {
         console.log(msg['\$1']);
@@ -106,6 +72,5 @@ export class AppComponent {
       }
 
     });
->>>>>>> master
   }
 }
