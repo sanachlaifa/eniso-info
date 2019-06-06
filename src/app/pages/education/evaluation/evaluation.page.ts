@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BaseService } from 'src/app/services/base.service';
 
 @Component({
   selector: 'app-evaluation',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./evaluation.page.scss'],
 })
 export class EvaluationPage implements OnInit {
-
+  goBack = BaseService.currentUrl;
   constructor() { }
 
   ngOnInit() {

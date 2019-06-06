@@ -10,21 +10,20 @@
         <ion-list>
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
 
-            <ion-item *ngIf="p.title!=='Logout'; else elseBlock" [routerDirection]="'root'" [routerLink]="[p.url]">
+            <ion-item [routerDirection]="'root'" [routerLink]="[p.url]" [class.active-item]="selectedPath.startsWith(p.url)">
               <ion-icon slot="start" [name]="p.icon"></ion-icon>
               <ion-label>
                 {{p.title}}
               </ion-label>
             </ion-item>
-            <ng-template #elseBlock>
-              <ion-item [routerDirection]="'root'" [routerLink]="" (click)="logout()">
-                <ion-icon slot="start" [name]="p.icon"></ion-icon>
-                <ion-label>
-                  {{p.title}}
-                </ion-label>
-              </ion-item>
-            </ng-template>
           </ion-menu-toggle>
+          
+          <ion-item [routerDirection]="'root'" [routerLink]="" (click)="logout()">
+            <ion-icon slot="start" name="log-out"></ion-icon>
+            <ion-label>
+              Logout
+            </ion-label>
+          </ion-item>
         </ion-list>
       </ion-content>
     </ion-menu>

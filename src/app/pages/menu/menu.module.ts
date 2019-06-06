@@ -19,28 +19,23 @@ const routes: Routes = [
       },
       {
         path: 'profil',
-        loadChildren: './pages/profil/profil.module#ProfilPageModule'
+        loadChildren: '../profil/profil.module#ProfilPageModule'
       },
       {
         path: 'calendar',
-        loadChildren: './pages/calendar/calendar.module#CalendarPageModule'
+        loadChildren: '../calendar/calendar.module#CalendarPageModule'
       },
       {
         path: 'documents',
-        loadChildren: './pages/documents/documents.module#DocumentsPageModule'
+        loadChildren: '../documents/documents.module#DocumentsPageModule'
       },
       {
         path: 'education',
-        loadChildren: './pages/education/education.module#EducationPageModule',
-      },
-      {
-        path: 'evaluation',
-        loadChildren: './pages/education/evaluation/evaluation.module#EvaluationPageModule'
-      },
-      {
-        path: 'projects',
-        loadChildren: './pages/education/projects/projects.module#ProjectsPageModule'
+        loadChildren: '../education/education.module#EducationPageModule',
       }
+/*       { path: 'evaluation', loadChildren: './pages/education/evaluation/evaluation.module#EvaluationPageModule' },
+      { path: 'projects', loadChildren: './pages/education/projects/projects.module#ProjectsPageModule' },
+ */
     ]
   }
 ];
