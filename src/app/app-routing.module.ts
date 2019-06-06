@@ -7,15 +7,8 @@ const routes: Routes = [
     redirectTo: 'signin',
     pathMatch: 'full'
   },
-  {
-    path: 'home',
-    loadChildren: './pages/home/home.module#HomePageModule'
-  },
-  { path: 'profil', loadChildren: './pages/profil/profil.module#ProfilPageModule' },
-  { path: 'calendar', loadChildren: './pages/calendar/calendar.module#CalendarPageModule' },
-  { path: 'documents', loadChildren: './pages/documents/documents.module#DocumentsPageModule' },
-  { path: 'education', loadChildren: './pages/education/education.module#EducationPageModule' },
-  { path: 'signin', loadChildren: './pages/sign-in/sign-in.module#SignInPageModule' }
+  { path: 'signin', loadChildren: './pages/sign-in/sign-in.module#SignInPageModule' },
+  { path: 'menu', loadChildren: './pages/menu/menu.module#MenuPageModule' },
 ];
 
 @NgModule({
