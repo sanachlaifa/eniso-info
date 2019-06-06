@@ -44,8 +44,7 @@ export class SignInPage implements OnInit {
         // Register the session id
         this.authService.sessionID = data.$1.sessionId;
 
-        this.router.navigateByUrl('/home', { state: extra });
-
+        this.router.navigateByUrl('/menu/home', { state: extra });
         setTimeout(() => {
           this.menu.enable(true);
         }, 200);
