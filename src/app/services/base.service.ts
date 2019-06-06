@@ -4,10 +4,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class BaseService {
-<<<<<<< HEAD
-  isEnabled = true;
-  constructor() { }
-=======
   static currentUrl = '';
   constructor() {
 
@@ -16,5 +12,4 @@ export class BaseService {
   getPerviousUrl(): string {
     return BaseService.currentUrl.substring(0, BaseService.currentUrl.lastIndexOf('/')) || '';
   }
->>>>>>> master
 }
