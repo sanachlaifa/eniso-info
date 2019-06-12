@@ -10,8 +10,35 @@ import { ProjectsPage } from './projects.page';
 const routes: Routes = [
   {
     path: '',
-    component: ProjectsPage
+    redirectTo: 'tabs/myteams',
+    pathMatch: 'full'
+  },
+  {
+    path: 'tabs',
+    component: ProjectsPage,
+    children: [
+      {
+        path: 'myteams',
+        loadChildren: './myteams/myteams.module#MyteamsPageModule'
+      },
+      {
+        path: 'allteams',
+        loadChildren: './all-teams/all-teams.module#AllTeamsPageModule'
+
+      }
+    ]
+  },
+
+  {
+    path: 'myteams',
+    loadChildren: './myteams/myteams.module#MyteamsPageModule'
+  },
+  {
+    path: 'allteams',
+    loadChildren: './all-teams/all-teams.module#AllTeamsPageModule'
+
   }
+
 ];
 
 @NgModule({
@@ -23,4 +50,4 @@ const routes: Routes = [
   ],
   declarations: [ProjectsPage]
 })
-export class ProjectsPageModule {}
+export class ProjectsPageModule { }

@@ -1,5 +1,7 @@
 {
   "name": "eniso-info",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

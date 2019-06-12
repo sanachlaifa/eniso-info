@@ -39,12 +39,18 @@ export class SignInPage implements OnInit {
     this.data = this.authService.getUser(this.username, this.password);
     this.data.subscribe(data => {
       if (data.$error === undefined) {
-        const extra = { msg: data.$1.sessionId };
 
         // Register the session id
         this.authService.sessionID = data.$1.sessionId;
+        console.log(this.authService.sessionID);
 
-        this.router.navigateByUrl('/menu/home', { state: extra });
+        //console.log(data.$1);
+        this.authService.user = data.$1;
+        this.authService.getUserGrade();
+        console.log(this.authService.user);
+        console.log(this.authService.grade);
+
+        this.router.navigateByUrl('/menu/home');
         setTimeout(() => {
           this.menu.enable(true);
         }, 200);

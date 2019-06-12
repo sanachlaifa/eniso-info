@@ -9,7 +9,4 @@ export class BaseService {
 
   }
 
-  getPerviousUrl(): string {
-    return BaseService.currentUrl.substring(0, BaseService.currentUrl.lastIndexOf('/')) || '';
-  }
 }

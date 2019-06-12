@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProjectsService } from 'src/app/services/projects.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-education',
@@ -7,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EducationPage implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

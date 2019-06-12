@@ -55,7 +55,6 @@ export class MenuPage implements OnInit {
     this.authService.logout().subscribe(msg => {
       try {
         console.log(msg['\$1']);
-        this.menuCtr.enable(false);
         this.router.navigateByUrl('signin');
       } catch (error) {
 
